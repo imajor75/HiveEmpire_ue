@@ -2,6 +2,7 @@
 
 
 #include "HiveEmpireGameModeBase.h"
+#include "HiveEmpireGameState.h"
 #include "HiveEmpirePlayerController.h"
 
 AHiveEmpireGameModeBase::AHiveEmpireGameModeBase(const FObjectInitializer& ObjectInitializer) :
@@ -9,6 +10,7 @@ AHiveEmpireGameModeBase::AHiveEmpireGameModeBase(const FObjectInitializer& Objec
 {
 	PlayerControllerClass = AHiveEmpirePlayerController::StaticClass();
 	DefaultPawnClass = nullptr;
+	GameStateClass = AHiveEmpireGameState::StaticClass();
 };
 
 void AHiveEmpireGameModeBase::InitGame(
