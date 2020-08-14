@@ -1,6 +1,7 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 
+#include "Ground.h"
 #include "HiveEmpireGameModeBase.h"
 #include "HiveEmpireGameState.h"
 #include "HiveEmpirePlayerController.h"
@@ -19,4 +20,11 @@ void AHiveEmpireGameModeBase::InitGame(
 	FString& ErrorMessage)
 {
 	AGameModeBase::InitGame(MapName, Options, ErrorMessage);
+
+	UWorld* w = GetWorld();
+	if (w == nullptr)
+		return;
+
+	FVector l( 70, -50, -10 );
+	w->SpawnActor( AGround::StaticClass(), &l );
 };
