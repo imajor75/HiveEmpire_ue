@@ -1,10 +1,11 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 
-#include "Ground.h"
 #include "HiveEmpireGameModeBase.h"
+#include "Ground.h"
 #include "HiveEmpireGameState.h"
 #include "HiveEmpirePlayerController.h"
+#include "HiveEmpireCamera.h"
 
 AHiveEmpireGameModeBase::AHiveEmpireGameModeBase(const FObjectInitializer& ObjectInitializer) :
 	Super(ObjectInitializer)
@@ -26,5 +27,7 @@ void AHiveEmpireGameModeBase::InitGame(
 		return;
 
 	FVector l( 70, -50, -10 );
-	w->SpawnActor( AGround::StaticClass(), &l );
+	AGround* g = w->SpawnActor<AGround>( l, FRotator() );
+
+	w->SpawnActor<AHiveEmpireCamera>();
 };

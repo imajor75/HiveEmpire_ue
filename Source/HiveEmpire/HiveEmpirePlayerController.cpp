@@ -9,4 +9,10 @@ AHiveEmpirePlayerController::AHiveEmpirePlayerController(const FObjectInitialize
 	bShowMouseCursor = true;
 	bEnableClickEvents = true;
 	bEnableMouseOverEvents = true;
+
+	if (PlayerCameraManager)
+	{
+		USceneComponent *u = PlayerCameraManager->GetTransformComponent();
+		int y = 8; y;
+	};
 };
